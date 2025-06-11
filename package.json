@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@gradio/client": "^1.15.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/uuid": "^10.0.0"
+  }
+}

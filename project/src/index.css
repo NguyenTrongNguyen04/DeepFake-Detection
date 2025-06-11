@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background-primary: theme('colors.background.primary.light');
+    --background-secondary: theme('colors.background.secondary.light');
+    --background-accent: theme('colors.background.accent.light');
+    --text-primary: theme('colors.text.primary.light');
+    --text-secondary: theme('colors.text.secondary.light');
+  }
+
+  .dark {
+    --background-primary: theme('colors.background.primary.dark');
+    --background-secondary: theme('colors.background.secondary.dark');
+    --background-accent: theme('colors.background.accent.dark');
+    --text-primary: theme('colors.text.primary.dark');
+    --text-secondary: theme('colors.text.secondary.dark');
+  }
+
+  body {
+    @apply bg-background-primary-light dark:bg-background-primary-dark text-text-primary-light dark:text-text-primary-dark;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background-secondary);
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary hover:bg-secondary-dark text-white;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300;
+  }
+  
+  .card {
+    @apply bg-background-secondary-light dark:bg-background-secondary-dark rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-500;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .tech-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .scan-line {
+    @apply bg-gradient-to-b from-transparent via-primary-light to-transparent opacity-30;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    animation: scan 2s ease-in-out infinite;
+  }
+
+  .detection-container {
+    @apply border border-gray-700 rounded-lg p-6 relative overflow-hidden;
+    background-color: var(--background-secondary);
+  }
+
+  .detection-container::before {
+    content: "";
+    @apply absolute inset-0 opacity-50 z-0;
+    background-color: var(--background-secondary);
+  }
+
+  .detection-container > * {
+    @apply relative z-10;
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* Animations */
+@keyframes scan {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
