@@ -100,7 +100,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- [EfficientNetB4](https://github.com/lukemelas/EfficientNet-PyTorch) for the deep learning model
+- [Xception](https://github.com/kwotsin/TensorFlow-Xception) for the deep learning model
 - [Gradio](https://gradio.app/) for the API integration
 - [Lucide Icons](https://lucide.dev/) for the beautiful icons
 - [Framer Motion](https://www.framer.com/motion/) for the animations
